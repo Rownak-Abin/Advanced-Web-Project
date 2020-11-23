@@ -22,6 +22,13 @@ module.exports= {
 		});
 	},
 
+	getAllhot: function(callback){
+		var sql = "select * from hotel";
+		db.getResults(sql, function(results){
+			callback(results);
+		});
+	},
+
 	getById: function(Sid, callback){
 
 		var sql = "select * from tours where id='"+Sid+"'";
@@ -33,9 +40,32 @@ module.exports= {
 
 
 	},
+	getHotById: function(Sid, callback){
+
+		var sql = "select * from hotel where id='"+Sid+"'";
+		db.getResults(sql, function(results){
+			//console.log(results[0].seller);
+				callback(results);
+		});
+
+
+
+	},
 
 	insertClient: function(newUser, callback){
 		var sql= "INSERT INTO user (Cname,Cemail,password,tour,status,payable,picture) VALUES ( '"+newUser.Cname+"','"+newUser.Cemail+"','"+newUser.password+"','"+newUser.tour+"', '"+newUser.status+"','"+newUser.payable+"','"+newUser.picture+"')";
+		db.execute(sql, function(results){
+			if(results.length >0 ){
+				callback(true);
+			}else{
+				callback(false);
+			}
+
+		});
+	},
+
+	insertHotClient: function(newUser, callback){
+		var sql= "INSERT INTO user (Cname,Cemail,password,hotel,status,payable,picture) VALUES ( '"+newUser.Cname+"','"+newUser.Cemail+"','"+newUser.password+"','"+newUser.hotel+"', '"+newUser.status+"','"+newUser.payable+"','"+newUser.picture+"')";
 		db.execute(sql, function(results){
 			if(results.length >0 ){
 				callback(true);
@@ -63,6 +93,20 @@ module.exports= {
 
 	search: function(key, callback){
 		var sql = "SELECT * FROM tours WHERE place LIKE '"+key+"%' ";
+		console.log(sql);
+		db.getResults(sql, function(results){
+
+			console.log("dataset length "+results.length);
+			if(results.length > 0){
+				callback(results);
+			}else{
+				callback(false);
+			}
+		});
+	},
+
+	search: function(key, callback){
+		var sql = "SELECT * FROM hotel WHERE place LIKE '"+key+"%' ";
 		console.log(sql);
 		db.getResults(sql, function(results){
 

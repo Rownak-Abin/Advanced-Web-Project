@@ -5,6 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 	<link rel="stylesheet" href="../public/assets/css/Logstyle.css">
+	 <meta charset="utf-8">
+     
 </head>
 <body>
 	<form method="post">
@@ -16,20 +18,51 @@
         <h1>Login Here</h1>
            
             <p>Username</p>
-            <input type="text" name="uname" value="" placeholder="Enter Username"><br>
+            <input type="text" name="uname" value="" placeholder="Enter Username"><br><br>
+
+
+ 		
+
+        
+   			<p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password"><br><br>
+
+      
 			
 			
+		
 			
-            <p>Password</p>
-            <input type="password" name="password" placeholder="Enter Password"><br>
-			
-			
-			
-        <input class="LogBut" type="submit" name="submit" value="Login">
+	    		
+       <input class="LogBut" type="submit" name="submit" value="Login">
+
+
+ 	 
+
+			<% if(typeof alert != 'undefined' ) { %>
+				<% if( alert[0].msg != '' || alert[0].msg == '' ) { %>
+          
+                <div style="position: relative; top:-200px;color:yellow" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <%= alert[0].msg %>
+
+			<% } %> 
+				<% } %> 
+                </div>
+
+
+			<% if(typeof alert != 'undefined' ) { %>
+				<% if( alert[1].msg != '' || alert[1].msg == '' ) { %>
+          
+                <div style="position: relative; top:-115px;color:yellow" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <%= alert[1].msg %>
+
+			<% } %> 
+				<% } %> 
+                </div>
 
 
 
 
+               
 
 
 

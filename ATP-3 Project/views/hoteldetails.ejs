@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>details</title>
+      <title>Hotel details</title>
       <link rel="stylesheet" href="/public/assets/css/bootstrap.min.css">
       <link rel="stylesheet" href="/public/assets/css/style.css">
       <link rel="stylesheet" href="/public/assets/css/fontawesome.min.css">
@@ -31,7 +31,7 @@
             <ul>
                 <li><a class="" href=""></a></li>
                  <li><a class="" href=""></a></li>
-               <li><a class="active" href="hos.php"> &nbsp &nbsp Home</a></li>
+               <li><a class="active" href=""> &nbsp &nbsp Home</a></li>
                <li><a href="#"> &nbsp &nbsp News</a></li>
                <li><a href="#"> &nbsp &nbsp Contact us</a></li>
                <li><a href="#"> &nbsp &nbsp About</a></li>
@@ -64,7 +64,7 @@
    <div>
     <form method="post" enctype="multipart/form-data">
 
-        <input type="text" id="nm"  value="<%= det[0].tname %>" name="tour"  style="position: relative; font-size:47px; left:320px; top:115px; text-shadow: 2px 2px 5px red;">
+        <input type="text" id="nm"  value="<%= det[0].hname %>" name="hotelnm"  style="position: relative; font-size:47px; left:320px; top:115px; text-shadow: 2px 2px 5px red;">
          
    </div>
 
@@ -91,20 +91,20 @@
 
     
 
-      <!--price duration-->
-            <div style="position: relative; top:180px; left:322px; background-color: #D3FAFC; width:790px; height:250px; border-radius: 8px; box-shadow: 2px 5px 28px -11px rgba(0,0,0,0.75);">
-                  <div style="position: absolute; background-color: #30AE30; width:790px; height:55px;     border-top-left-radius:8px; border-top-right-radius:8px; ">
+  <!--price duration-->
+        <div style="position: relative; top:180px; left:322px; background-color: #D3FAFC; width:790px; height:250px; border-radius: 8px; box-shadow: 2px 5px 28px -11px rgba(0,0,0,0.75);">
+              <div style="position: absolute; background-color: #30AE30; width:790px; height:55px;     border-top-left-radius:8px; border-top-right-radius:8px; ">
 
-                        <h4 style="position: relative;top:10px; left:30px; color: white; ">Price and Duration</h4>
-                        
-                  </div>
+                    <h4 style="position: relative;top:10px; left:30px; color: white; ">Room Tarrif</h4>
+                    
+              </div>
 
 
-                  <h4 style="position: relative; font-family: serif; ; top:90px; left:50px">Per person cost:      <%= det[0].tprice %></h4>
+              <h4 style="position: relative; font-family: serif; ; top:90px; left:50px">Per Night cost:      <%= det[0].price %></h4>
 
-                  <h4 style="position: relative; font-family: serif ; top:110px; left:50px">Tour Duration:        <%= det[0].duration %></h4>
+              <h4 style="position: relative; font-family: serif ; top:110px; left:50px">Tour Duration:     11AM -11AM (24 hours)   </h4>
 
-            </div>
+        </div>
 
 
 
@@ -138,9 +138,9 @@
                <div style="position: relative;left:85px; color:#fff;  font-size: 17px; top:-10px">--Total Cost--</div>  
 
               
-               <input id="cost" value="<%= det[0].tprice %>" type="text" name="cos" style="position: relative; height:50px; padding:10px; width:220px;margin:5px 25px;  font-size: 20px;">     
+               <input id="cost" value="<%= det[0].price %>" type="text" name="cos" style="position: relative; height:50px; padding:10px; width:220px;margin:5px 25px;  font-size: 20px;">     
 
-                <div style="position: relative;left:85px; color:#fff;  font-size: 17px; top:-0px">--Add People--</div>  
+                <div style="position: relative;left:85px; color:#fff;  font-size: 17px; top:-0px">--Nights--</div>  
 
                  
 

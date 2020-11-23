@@ -7,8 +7,12 @@ const login				= require('./controllers/login');
 const rate				= require('./controllers/rate');
 const search			= require('./controllers/search');
 const home				= require('./controllers/home');
+const logout			= require('./controllers/logout');
+const hotel				= require('./controllers/hotel');
 const path				= require('path');
 const fileUpload 		= require('express-fileupload');
+
+const { check, validationResult } = require('express-validator'); 
 const _ 				= require('lodash');
 const app				= express();
 const port				= 3000;
@@ -38,6 +42,8 @@ app.use('/home', home);
 app.use('/login', login);
 app.use('/rate', rate);
 app.use('/search', search);
+app.use('/logout', logout);
+app.use('/hotel', hotel);
 /*
 app.use('/user', user);
 app.use('/employee', employee);
